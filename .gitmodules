@@ -10,3 +10,6 @@
 [submodule "streaming"]
 	path = streaming
 	url = https://github.com/AlexGeniusMan/Polyus-Hack-2022-RealityX-Streaming
+[submodule "ml"]
+	path = ml
+	url = https://github.com/AlexGeniusMan/Polyus-Hack-2022-RealityX-ML
