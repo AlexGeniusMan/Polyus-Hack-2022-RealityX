@@ -7,6 +7,6 @@
 [submodule "backend"]
 	path = backend
 	url = https://github.com/AlexGeniusMan/Polyus-Hack-2022-RealityX-Backend
-[submodule "ml"]
-	path = ml
-	url = https://github.com/AlexGeniusMan/Polyus-Hack-2022-RealityX-ML
+[submodule "streaming"]
+	path = streaming
+	url = https://github.com/AlexGeniusMan/Polyus-Hack-2022-RealityX-Streaming
