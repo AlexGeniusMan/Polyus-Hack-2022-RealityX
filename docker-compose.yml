@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+  backend:
+    build:
+      context: .
+    container_name: backend
+    volumes:
+      - ./media/:/usr/src/project/media/
+      - ./logs/:/usr/src/project/logs/
+    environment:
+      # --- Main
+      BACKEND_DEBUG_MODE: ${BACKEND_DEBUG_MODE}
+      BACKEND_SECRET_KEY: ${BACKEND_SECRET_KEY}
+      BACKEND_ALLOWED_HOSTS: ${BACKEND_ALLOWED_HOSTS}
+      # --- Database
+      BACKEND_DEFAULT_DB: ${BACKEND_DEFAULT_DB}
+      DB_HOST: ${DB_HOST}
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      # --- Default user
+      DJANGO_SUPERUSER_USERNAME: ${BACKEND_SUPERUSER_USERNAME}
+      DJANGO_SUPERUSER_EMAIL: ${BACKEND_SUPERUSER_EMAIL}
+      DJANGO_SUPERUSER_PASSWORD: ${BACKEND_SUPERUSER_PASSWORD}
+    ports:
+      - "8020:8080"
