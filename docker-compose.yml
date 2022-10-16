@@ -3,9 +3,9 @@ version: '3.7'
 services:
   backend:
     build:
-      context: .
-    container_name: backend
+      context: ./backend
     volumes:
+      - ./frames/:/usr/src/frames/
       - ./media/:/usr/src/project/media/
       - ./logs/:/usr/src/project/logs/
     environment:
@@ -24,4 +24,11 @@ services:
       DJANGO_SUPERUSER_EMAIL: ${BACKEND_SUPERUSER_EMAIL}
       DJANGO_SUPERUSER_PASSWORD: ${BACKEND_SUPERUSER_PASSWORD}
     ports:
-      - "8020:8080"
+      - "8777:8080"
+  ml:
+    build:
+      context: ./ml
+    volumes:
+      - ./frames/:/usr/src/project/frames/
+    depends_on:
+      - backend
